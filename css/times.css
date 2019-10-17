@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,600&display=swap');
+
+:root{
+    --primary1: HSL(0, 0%, 0%);
+    --primary2: HSL(0, 0%, 13%);
+
+    --secondary1: HSL(257, 46%, 47%);
+    --secondary2: HSL(202, 25%, 52%);
+    
+    --background: HSL(251, 46%, 52%);
+    
+    --white: HSL(0, 0%, 100%);
+
+    --grey1: HSL(0, 0%, 28%);
+    --grey2: HSL(0, 0%, 74%);
+    --grey3: HSL(0, 0%, 46%);
+    --grey4: HSL(0, 0%, 26%);
+}
+
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 1.2em;
+    line-height: 1.6;
+    /*font-family: font stack required for body text */
+    font-family: 'Roboto',Helvetica, sans-serif;
+    background-color: var(--grey1);
+}
+
+body {
+    width: 100%;
+    padding-right: 75px;
+    padding-left: 75px;
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--white);
+}
+
+h1, h2, h3, h4{
+    /*font-family: font stack required for headings */
+    font-family: 'Roboto', Helvetica, serif;
+    color: var(--secondary2);
+}
+
+.container{
+    max-width: 1500px;
+}
+.subnav{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary2);
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 0 0;
+}
+.subnav a{
+    color: var(--white);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.mainnav{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primary2);
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 30px;
+}
+.mainnav a{
+    color: var(--white);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.masthead{
+    max-width: 1500px;
+    background-color: var(--white);
+    padding: 20px;
+}
+.times-logo{
+    max-width: 100%;
+}
+
+.content{
+    display: grid;
+    /* grid-template-columns: 50px 50px auto 50px 40px; */
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 25% 100px auto;
+}
+
+article:first-child {
+    /* border: 5px solid black; */
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    color: var(--primary1);
+    -webkit-box-shadow: 5px 5px 5px 5px var(--grey4);
+    box-shadow: 5px 5px 5px 5px var(--grey4);
+}
+
+.story-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.story p{
+    padding: 10px 5px;
+    text-align: justify;
+    font-size: 0.8em;
+  /* text-justify: inter-word; */
+}
+.story blockquote{
+    quotes: "\201E" "\201D";
+}
+.story blockquote::before{
+    content: open-quote;
+}
+.story blockquote::after{
+    content: close-quote;
+}
+.story p.byline{
+    font-weight: bold;
+}
+p.byline span.author{
+    
+}
+p.byline span.pub{
+    color: var(--primary1);
+}
+.foot{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary2);
+    padding: 5px 15px
+}
+
+
+
+article {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (max-width: 576px) {
+    body{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    h1,h2,h3,h4 {
+        font-size: 1.0em;
+    }  
+
+    .mainnav a{
+        font-size: 0.7em;
+    }
+
+    article {
+        width: 90%;
+    }
+
+    .content {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }  
+
+    .subnav a{
+        font-size: 0.8em;
+    }
+}
+
+
+@media (min-width: 576px) {
+    body{
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+    h1,h2,h3,h4 {
+        font-size: 1.0em;
+    }
+
+    article {
+        width: 90%;
+    }
+
+    .content {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
+    .subnav a{
+        font-size: 0.8em;
+    }
+}
+  
+@media (min-width: 768px) {
+    body{
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    h1,h2,h3,h4 {
+        font-size: 1.2em;
+    }    
+
+    .content {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+}
+  
+@media (min-width: 992px) {
+    body{
+        padding-right: 75px;
+        padding-left: 75px;
+    }
+    h1,h2,h3,h4 {
+        font-size: 1.5em;
+    }
+    
+    .content {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+    }
+    
+}
+  
+@media (min-width: 1200px) {
+    
+    .content {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+    }
+    
+}
